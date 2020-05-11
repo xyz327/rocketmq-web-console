@@ -1,0 +1,28 @@
+<form nz-form>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="nameserver">
+            <span>
+            nameserver地址
+            <i nz-icon nz-tooltip nzTitle="点击输入nameserver地址" nzType="question-circle" nzTheme="outline"></i>
+          </span>
+        </nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <div nz-row>
+                <div nz-col nzSpan="18">
+                    <nz-select nzOpen="false" id="nameserver" name="nameserver" nzHide [nzTokenSeparators]="tokenSeparator" nzMode="tags" nzPlaceHolder="请输入nameserver地址" [(ngModel)]="settings.namesvrAddrList">
+                        <!-- <nz-option *ngFor="let option of namesvrAddrList" [nzLabel]="option.label" [nzValue]="option.value" [nzHide]="!isNotSelected(option.value)"></nz-option> -->
+                    </nz-select>
+                </div>
+                <div nz-col nzSpan="4" nzOffset="1">
+                    <button nz-button nzType="primary">更新</button>
+                </div>
+            </div>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="useVIPChannel">是否使用VIPChannel</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <nz-switch [(ngModel)]="settings.useVIPChannel" id="useVIPChannel" name="useVIPChannel"></nz-switch>
+        </nz-form-control>
+    </nz-form-item>
+</form>
